@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Usage copyToProject {project dir}
+
+mkdir -p $1
+rsync -rv \
+--exclude=.git \
+--exclude=*~ \
+--exclude=copyToProject \
+--exclude=node_modules \
+--exclude=dist/* \
+. $1
+echo "Copied to $1."
+echo "  Remember to run npm install and change the package.json name"
+echo "  Run npm start to start the background compilation, npm run build to do one-time build"
+echo "  Note that npm start might show an error if there is no .git.  Run git init to get past that"
