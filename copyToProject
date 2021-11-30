@@ -2,6 +2,8 @@
 
 # Usage copyToProject {project dir}
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 mkdir -p $1
 rsync -rv \
 --exclude=.git \
@@ -9,7 +11,7 @@ rsync -rv \
 --exclude=copyToProject \
 --exclude=node_modules \
 --exclude=dist/* \
-. $1
+${DIR}/ $1
 echo "Copied to $1."
 echo "  Remember to run npm install and change the package.json name"
 echo "  Run npm start to start the background compilation, npm run build to do one-time build"
