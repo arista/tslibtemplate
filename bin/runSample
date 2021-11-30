@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# cd to this script's directory, so that node can use relative paths with require()
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd ${DIR}
+
+# use "exec" to make node take over the running process, allowing it to receive signals
+exec node ./runSample.js
