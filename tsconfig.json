@@ -13,7 +13,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "declaration": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "paths": {
+      "@lib/*": ["./src/lib/*"],
+      "@test/*": ["./src/test/*"]
+    }
   },
   "include": [
     "src/**/*"
